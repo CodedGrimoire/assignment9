@@ -1,29 +1,24 @@
-import { useState } from "react";
-import { sendPasswordResetEmail } from "firebase/auth";
-import { auth } from "../firebase";
-import { useNavigate } from "react-router-dom";
+// ForgotPassword.jsx
+import React, { useState } from "react";
+import { toast } from "react-hot-toast"; // Import react-hot-toast
+import { useNavigate } from "react-router-dom"; // Import useNavigate from React Router
 
 export default function ForgotPassword() {
-  const [email, setEmail] = useState("");  // State to hold the email input
-  const [err, setErr] = useState("");      // To store error message
-  const [success, setSuccess] = useState("");  // To store success message
-  const [busy, setBusy] = useState(false);    // To track loading state
-  const navigate = useNavigate();         // For navigation after success
+  const [email, setEmail] = useState("");
+  const navigate = useNavigate(); // Get the navigate function
 
-  // Handle password reset
-  async function handleResetPassword(e) {
+  // Handle reset password
+  const handleResetPassword = (e) => {
     e.preventDefault();
-    setErr(""); setSuccess(""); setBusy(true);
-    try {
-      await sendPasswordResetEmail(auth, email);
-      setSuccess("Password reset email sent! Please check your inbox.");
-      setTimeout(() => navigate("/signin"), 3000); // Redirect to signin after 3 seconds
-    } catch (e) {
-      setErr("Error: " + e.message); // If error occurs, set it
-    } finally {
-      setBusy(false);
+    if (email) {
+      toast.success("Password reset link sent to your email!"); // Success toast
+
+      // Navigate to the Home page immediately after showing the success toast
+      navigate("/home"); // Redirect to Home page
+    } else {
+      toast.error("Please enter a valid email address!"); // Error toast if email is not provided
     }
-  }
+  };
 
   return (
     <div style={{ maxWidth: 360, margin: "4rem auto", fontFamily: "sans-serif" }}>
@@ -31,19 +26,16 @@ export default function ForgotPassword() {
       <form onSubmit={handleResetPassword}>
         <input
           type="email"
-          placeholder="Enter your email"
+          placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
           style={{ display: "block", width: "100%", margin: "8px 0" }}
         />
-        <button disabled={busy} type="submit" style={{ width: "100%", padding: 8 }}>
-          {busy ? "Sending..." : "Reset Password"}
+        <button type="submit" style={{ width: "100%", padding: 8 }}>
+          Reset Password
         </button>
       </form>
-
-      {err && <p style={{ color: "crimson" }}>{err}</p>}
-      {success && <p style={{ color: "green" }}>{success}</p>}
     </div>
   );
 }

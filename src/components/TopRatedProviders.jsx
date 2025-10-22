@@ -1,5 +1,5 @@
-// TopRatedProviders.jsx
 import React from "react";
+import "animate.css"; // Import Animate.css
 import "./common.css"; // Import shared CSS
 
 const TopRatedProviders = () => {
@@ -25,11 +25,11 @@ const TopRatedProviders = () => {
   ];
 
   return (
-    <section className="top-rated-providers">
+    <section className="top-rated-providers animate__animated animate__fadeIn">
       <h2>Top Rated Providers</h2>
       <div className="provider-cards">
         {providers.map((provider, index) => (
-          <div key={index} className="provider-card">
+          <div key={index} className="provider-card animate__animated animate__fadeInUp">
             <img src={provider.image} alt={provider.name} className="provider-image" />
             <h3>{provider.name}</h3>
             <p>{provider.skill}</p>

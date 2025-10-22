@@ -1,8 +1,10 @@
+// Signin.jsx
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { auth, googleProvider } from "../firebase";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { toast } from "react-hot-toast"; // Import react-hot-toast for error toast
 
 export default function Signin() {
   const [email, setEmail] = useState("");
@@ -18,10 +20,11 @@ export default function Signin() {
     setErr(""); setBusy(true);
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/home", { replace: true });
+      navigate("/home", { replace: true }); // Redirect after login success
     } catch (e) {
       console.error("Login Error:", e); // Log the full error
       setErr(e.message); // Display the error message
+      toast.error("Login failed. Please try again!"); // Show error toast
     } finally {
       setBusy(false);
     }
@@ -32,10 +35,11 @@ export default function Signin() {
     setErr(""); setBusy(true);
     try {
       await signInWithPopup(auth, googleProvider);
-      navigate("/home", { replace: true });
+      navigate("/home", { replace: true }); // Redirect after Google login success
     } catch (e) {
       console.error("Google Login Error:", e); // Log the full error
       setErr(e.message); // Display the error message
+      toast.error("Google login failed. Please try again!"); // Show error toast
     } finally {
       setBusy(false);
     }
@@ -83,7 +87,7 @@ export default function Signin() {
       {err && <p style={{ color: "crimson" }}>{err}</p>}
 
       <div style={{ marginTop: 12 }}>
-        <Link to="/forgot-password">Forgot Password?</Link>
+        <Link to="/forgot-password">Forgot Password?</Link> {/* Link to ForgotPassword page */}
       </div>
 
       <div style={{ marginTop: 12 }}>
