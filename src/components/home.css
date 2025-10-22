@@ -1,0 +1,80 @@
+/* General container */
+.home-container {
+  max-width: 100%;
+  margin: 0 auto;
+  font-family: sans-serif;
+  padding: 0 16px;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Avatar styling */
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+
+.avatar.initials {
+  background: #ececec;
+  color: #333;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+  border: 1px solid #ddd;
+}
+
+/* Button styling */
+.signin-btn,
+.logout-btn,
+.details-btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.signin-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+}
+
+.logout-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+}
+
+.details-btn {
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+}
+
+/* Main content */
+.heading {
+  margin-bottom: 8px;
+  font-size: 24px;
+}
+
+.details-btn-container {
+  margin-top: 16px;
+}

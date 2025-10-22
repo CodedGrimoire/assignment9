@@ -1,0 +1,74 @@
+[
+  {
+    "skillId": 1,
+    "skillName": "Beginner Guitar Lessons",
+    "providerName": "Alex Martin",
+    "providerEmail": "alex@skillswap.com",
+    "price": 20,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Acoustic guitar classes for complete beginners.",
+    "image": "https://i.postimg.cc/vmZHZm5Y/guitar-image.jpg",
+    "category": "Music"
+  },
+  {
+    "skillId": 2,
+    "skillName": "Spoken English Practice",
+    "providerName": "Sara Hossain",
+    "providerEmail": "sara@skillswap.com",
+    "price": 10,
+    "rating": 4.6,
+    "slotsAvailable": 5,
+    "description": "Conversational English sessions for non-native speakers.",
+    "image": "https://i.postimg.cc/4Np9CPTP/english-image.jpg",
+    "category": "Language"
+  },
+  {
+    "skillId": 3,
+    "skillName": "Data Science Basics",
+    "providerName": "John Doe",
+    "providerEmail": "john@skillswap.com",
+    "price": 30,
+    "rating": 4.9,
+    "slotsAvailable": 2,
+    "description": "Introduction to data science concepts and tools.",
+    "image": "https://i.postimg.cc/XXD4Wjkf/data-science-image.jpg",
+    "category": "Technology"
+  },
+  {
+    "skillId": 4,
+    "skillName": "Yoga for Beginners",
+    "providerName": "Emma Liu",
+    "providerEmail": "emma@skillswap.com",
+    "price": 15,
+    "rating": 4.7,
+    "slotsAvailable": 4,
+    "description": "Yoga sessions focusing on flexibility and mindfulness.",
+    "image": "https://i.postimg.cc/ht5NndHf/yoga-image.jpg",
+    "category": "Health & Fitness"
+  },
+  {
+    "skillId": 5,
+    "skillName": "Web Development Bootcamp",
+    "providerName": "Daniel Green",
+    "providerEmail": "daniel@skillswap.com",
+    "price": 50,
+    "rating": 4.5,
+    "slotsAvailable": 6,
+    "description": "Learn HTML, CSS, JavaScript, and React in an intensive bootcamp.",
+    "image": "https://i.postimg.cc/mr8rtDNJ/web-development-image.jpg",
+    "category": "Technology"
+  },
+  {
+    "skillId": 6,
+    "skillName": "Creative Writing Workshop",
+    "providerName": "Lily Brown",
+    "providerEmail": "lily@skillswap.com",
+    "price": 25,
+    "rating": 4.7,
+    "slotsAvailable": 3,
+    "description": "Workshop to enhance your creative writing and storytelling skills.",
+    "image": "https://i.postimg.cc/wMwH1Z2v/writing-image.jpg",
+    "category": "Arts"
+  }
+]

@@ -2,21 +2,28 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../firebase";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 export default function Signup() {
   const [displayName, setDisplayName] = useState("");
-  const [email, setEmail]             = useState("");
-  const [password, setPassword]       = useState("");
-  const [err, setErr]                 = useState("");
-  const [busy, setBusy]               = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [photoURL, setPhotoURL] = useState("");
+  const [err, setErr] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [showPassword, setShowPassword] = useState(false); // For password visibility toggle
   const navigate = useNavigate();
 
+  // Handle signup
   async function handleSignup(e) {
     e.preventDefault();
-    setErr(""); setBusy(true);
+    setErr("");
+    setBusy(true);
     try {
       const cred = await createUserWithEmailAndPassword(auth, email, password);
-      if (displayName) await updateProfile(cred.user, { displayName });
+      if (displayName || photoURL) {
+        await updateProfile(cred.user, { displayName, photoURL });
+      }
       navigate("/home", { replace: true });
     } catch (e) {
       setErr(e.message);
@@ -31,33 +38,54 @@ export default function Signup() {
       <form onSubmit={handleSignup}>
         <input
           type="text"
-          placeholder="display name (optional)"
+          placeholder="Display Name"
           value={displayName}
-          onChange={(e)=>setDisplayName(e.target.value)}
-          style={{ display:"block", width:"100%", margin:"8px 0" }}
+          onChange={(e) => setDisplayName(e.target.value)}
+          style={{ display: "block", width: "100%", margin: "8px 0" }}
         />
         <input
           type="email"
-          placeholder="email"
+          placeholder="Email"
           value={email}
-          onChange={(e)=>setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
           required
-          style={{ display:"block", width:"100%", margin:"8px 0" }}
+          style={{ display: "block", width: "100%", margin: "8px 0" }}
         />
         <input
-          type="password"
-          placeholder="password"
-          value={password}
-          onChange={(e)=>setPassword(e.target.value)}
-          required
-          style={{ display:"block", width:"100%", margin:"8px 0" }}
+          type="text"
+          placeholder="Photo URL (optional)"
+          value={photoURL}
+          onChange={(e) => setPhotoURL(e.target.value)}
+          style={{ display: "block", width: "100%", margin: "8px 0" }}
         />
-        <button disabled={busy} type="submit" style={{ width:"100%", padding:8 }}>
-          {busy ? "Creating…" : "Create account"}
+        <div style={{ position: "relative" }}>
+          <input
+            type={showPassword ? "text" : "password"}
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            style={{ display: "block", width: "100%", margin: "8px 0" }}
+          />
+          <span
+            onClick={() => setShowPassword(!showPassword)}
+            style={{
+              position: "absolute",
+              right: 10,
+              top: 10,
+              cursor: "pointer",
+            }}
+          >
+            {showPassword ? <FaEyeSlash /> : <FaEye />}
+          </span>
+        </div>
+
+        <button disabled={busy} type="submit" style={{ width: "100%", padding: 8 }}>
+          {busy ? "Creating..." : "Register"}
         </button>
       </form>
 
-      {err && <p style={{ color:"crimson" }}>{err}</p>}
+      {err && <p style={{ color: "crimson" }}>{err}</p>}
 
       <p style={{ marginTop: 12 }}>
         Already have an account? <Link to="/signin">Sign in</Link>

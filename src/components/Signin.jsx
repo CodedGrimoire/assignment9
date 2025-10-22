@@ -2,14 +2,17 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { auth, googleProvider } from "../firebase";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 export default function Signin() {
-  const [email, setEmail]       = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [err, setErr]           = useState("");
-  const [busy, setBusy]         = useState(false);
+  const [err, setErr] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [showPassword, setShowPassword] = useState(false); // For password visibility toggle
   const navigate = useNavigate();
 
+  // Handle email sign-in
   async function handleEmailSignin(e) {
     e.preventDefault();
     setErr(""); setBusy(true);
@@ -17,19 +20,22 @@ export default function Signin() {
       await signInWithEmailAndPassword(auth, email, password);
       navigate("/home", { replace: true });
     } catch (e) {
-      setErr(e.message);
+      console.error("Login Error:", e); // Log the full error
+      setErr(e.message); // Display the error message
     } finally {
       setBusy(false);
     }
   }
 
+  // Handle Google login
   async function handleGoogle() {
     setErr(""); setBusy(true);
     try {
       await signInWithPopup(auth, googleProvider);
       navigate("/home", { replace: true });
     } catch (e) {
-      setErr(e.message);
+      console.error("Google Login Error:", e); // Log the full error
+      setErr(e.message); // Display the error message
     } finally {
       setBusy(false);
     }
@@ -37,37 +43,67 @@ export default function Signin() {
 
   return (
     <div style={{ maxWidth: 360, margin: "4rem auto", fontFamily: "sans-serif" }}>
-      <h2>Sign in</h2>
+      <h2>Login</h2>
       <form onSubmit={handleEmailSignin}>
         <input
           type="email"
-          placeholder="email"
+          placeholder="Email"
           value={email}
-          onChange={(e)=>setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
           required
-          style={{ display:"block", width:"100%", margin:"8px 0" }}
+          style={{ display: "block", width: "100%", margin: "8px 0" }}
         />
-        <input
-          type="password"
-          placeholder="password"
-          value={password}
-          onChange={(e)=>setPassword(e.target.value)}
-          required
-          style={{ display:"block", width:"100%", margin:"8px 0" }}
-        />
-        <button disabled={busy} type="submit" style={{ width:"100%", padding:8 }}>
-          {busy ? "Signing in…" : "Sign in"}
+        <div style={{ position: "relative" }}>
+          <input
+            type={showPassword ? "text" : "password"}
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            style={{ display: "block", width: "100%", margin: "8px 0" }}
+          />
+          <span
+            onClick={() => setShowPassword(!showPassword)}
+            style={{
+              position: "absolute",
+              right: 10,
+              top: 10,
+              cursor: "pointer",
+            }}
+          >
+            {showPassword ? <FaEyeSlash /> : <FaEye />}
+          </span>
+        </div>
+
+        <button disabled={busy} type="submit" style={{ width: "100%", padding: 8 }}>
+          {busy ? "Signing in..." : "Login"}
         </button>
       </form>
 
-      <button disabled={busy} onClick={handleGoogle} style={{ width:"100%", padding:8, marginTop:8 }}>
-        Continue with Google
-      </button>
+      {err && <p style={{ color: "crimson" }}>{err}</p>}
 
-      {err && <p style={{ color:"crimson" }}>{err}</p>}
+      <div style={{ marginTop: 12 }}>
+        <Link to="/forgot-password">Forgot Password?</Link>
+      </div>
+
+      <div style={{ marginTop: 12 }}>
+        <button
+          onClick={handleGoogle}
+          style={{
+            width: "100%",
+            padding: 8,
+            backgroundColor: "#4285F4",
+            color: "white",
+            border: "none",
+            borderRadius: 6,
+          }}
+        >
+          Continue with Google
+        </button>
+      </div>
 
       <p style={{ marginTop: 12 }}>
-        New here? <Link to="/signup">Create an account</Link>
+        Don't have an account? <Link to="/signup">Sign up</Link>
       </p>
     </div>
   );
