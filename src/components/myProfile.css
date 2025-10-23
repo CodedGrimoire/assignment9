@@ -1,0 +1,139 @@
+.profile-container {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  font-family: "Inter", sans-serif;
+  color: #333;
+}
+
+.profile-container h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.profile-info {
+  margin-bottom: 1.5rem;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-pic {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
+
+.profile-placeholder {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #ececec;
+  color: #555;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.edit-btn {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: #2563eb;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.edit-btn:hover {
+  background-color: #1d4ed8;
+}
+
+/* Form styling */
+.profile-form {
+  margin-top: 1rem;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.error-text {
+  color: crimson;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.cancel-btn,
+.save-btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.cancel-btn {
+  background-color: #e5e7eb;
+  color: #111;
+}
+
+.cancel-btn:hover {
+  background-color: #d1d5db;
+}
+
+.save-btn {
+  background-color: #16a34a;
+  color: white;
+}
+
+.save-btn:hover {
+  background-color: #15803d;
+}
+
+.center-text {
+  text-align: center;
+  margin-top: 2rem;
+  color: #555;
+}
