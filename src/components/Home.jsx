@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { useNavigate } from "react-router-dom";
+
 import { onAuthStateChanged } from "firebase/auth";
 import SkillsCards from "./SkillsCards";
 import { auth } from "../firebase";
@@ -13,7 +13,7 @@ import HowWorks from "./HowItWorks";
 
 export default function Home() {
   const [user, setUser] = useState(auth.currentUser);
-  const navigate = useNavigate();
+
 
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (u) => setUser(u));

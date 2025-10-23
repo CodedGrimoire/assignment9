@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Guitar Basics Workshop",
+    "date": "Nov 3, 2025",
+    "time": "5:00 PM - 7:00 PM",
+    "instructor": "Alex Martin",
+    "image": "https://images.pexels.com/photos/164936/pexels-photo-164936.jpeg?auto=compress&cs=tinysrgb&w=800"
+  },
+  {
+    "id": 2,
+    "title": "Intro to Data Science",
+    "date": "Nov 10, 2025",
+    "time": "6:00 PM - 8:00 PM",
+    "instructor": "John Doe",
+    "image": "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800"
+  },
+  {
+    "id": 3,
+    "title": "Yoga for Mindfulness",
+    "date": "Nov 17, 2025",
+    "time": "7:00 AM - 8:30 AM",
+    "instructor": "Emma Liu",
+    "image": "https://images.pexels.com/photos/3823039/pexels-photo-3823039.jpeg?auto=compress&cs=tinysrgb&w=800"
+  },
+  {
+    "id": 4,
+    "title": "Creative Writing Essentials",
+    "date": "Nov 24, 2025",
+    "time": "4:00 PM - 6:00 PM",
+    "instructor": "Lily Brown",
+    "image": "https://images.pexels.com/photos/261909/pexels-photo-261909.jpeg?auto=compress&cs=tinysrgb&w=800"
+  },
+  {
+    "id": 5,
+    "title": "Web Development Bootcamp",
+    "date": "Dec 1, 2025",
+    "time": "3:00 PM - 6:00 PM",
+    "instructor": "Daniel Green",
+    "image": "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=800"
+  },
+  {
+    "id": 6,
+    "title": "Photography Masterclass",
+    "date": "Dec 8, 2025",
+    "time": "10:00 AM - 12:00 PM",
+    "instructor": "Sophie Turner",
+    "image": "https://images.pexels.com/photos/112571/pexels-photo-112571.jpeg?auto=compress&cs=tinysrgb&w=800"
+  }
+]
