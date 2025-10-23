@@ -9,6 +9,7 @@ import Footer from "./Footer";
 import Hero from "./HeroSlider";
 
 import Top from "./TopRatedProviders";
+import HowWorks from "./HowItWorks";
 
 export default function Home() {
   const [user, setUser] = useState(auth.currentUser);
@@ -48,6 +49,7 @@ export default function Home() {
         <section>
           <Top />
         </section>
+        <HowWorks/>
 
         <section>
           <Footer/>
