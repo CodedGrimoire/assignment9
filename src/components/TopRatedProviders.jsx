@@ -1,77 +1,107 @@
 import React, { useEffect, useState } from "react";
 import "animate.css";
-import providersData from "../assets/topProviders.json";
+
+
+import prooovidersData from "../assets/topProviders.json";
 
 const TopRatedProviders = () => {
-  const [providers, setProviders] = useState([]);
+
+
+  const [tprov, setProhvidersteac] = useState([]);
+
 
   useEffect(() => {
-    setProviders(providersData);
+    setProhvidersteac(prooovidersData);
   }, []);
 
   return (
     <section
       className="animate__animated animate__fadeIn"
+
       style={{
-        textAlign: "center",
-        padding: "3rem 1rem",
-        marginTop: "3rem",
-        background: "#f9fafb",
+        textAlign: "center",  marginTop: "4rem",
+
+        
+        padding: "3rem 1rem", background: "white",        borderRadius: "10px",
+       
+       
       }}
     >
       <h2
         style={{
           fontSize: "2rem",
-          fontWeight: "600",
-          marginBottom: "2rem",
-          color: "#111",
+
+           marginBottom: "2rem", fontWeight: "600",
+         
+
+          
+          color: "black",
         }}
       >
-        Top Rated Providers
-      </h2>
+
+        Top Rated Providers </h2>
+     
 
       <div
         style={{
-          display: "flex",
-          justifyContent: "center",
+          display: "flex",  gap: "20px",   justifyContent: "center",
+
+         
+        
+
+
           flexWrap: "wrap",
-          gap: "20px",
+          
         }}
       >
-        {providers.map((provider, index) => (
+        {tprov.map((provider, index) => (
           <div
             key={index}
+
             className="animate__animated animate__fadeInUp"
             style={{
-              width: "250px",
-              background: "#fff",
-              borderRadius: "10px",
-              boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
-              overflow: "hidden",
-              paddingBottom: "1rem",
-              transition: "transform 0.3s ease",
+              width: "251px",   paddingBottom: "2rem",
+
+              
+              background: "white",
+
+            
+             
+
+              borderRadius: "10px",   overflow: "hidden",
+             
             }}
           >
             <img
-              src={provider.image}
-              alt={provider.name}
+              src={provider.image}   alt=""
+
+            
+
+
               style={{
                 width: "100%",
+                 objectFit: "cover",
+
                 height: "180px",
-                objectFit: "cover",
+               
               }}
+
+
             />
-            <h3 style={{ marginTop: "1rem", fontSize: "1.2rem" }}>
+            <h3 style={{ marginTop: "1.5rem", fontSize: "1.3rem" ,color: "#111010ff"}}>
               {provider.name}
             </h3>
-            <p style={{ color: "#555", margin: "6px 0" }}>{provider.skill}</p>
-            <p style={{ color: "#2563eb", fontWeight: "600" }}>
-              ⭐ {provider.rating}
+            <p style={{ color: "#403e3eff", margin: "6px 0" }}>{provider.skill}
+
             </p>
-          </div>
+
+            <p style={{ color: "#020815ff", fontWeight: "600" }}>
+               {provider.rating} ⭐⭐⭐ </p> </div>
+           
+         
         ))}
-      </div>
-    </section>
+      </div>  </section>
+   
   );
 };
 

@@ -69,9 +69,12 @@ export default function Footer() {
           Privacy Policy
         </Link>
         <p style={{ marginTop: 8, fontSize: 14, color: "#777373ff" }}>
-          &copy; 2025 SkillShare. All rights reserved.
-        </p>
-      </div>
+
+
+          
+          &copy; 2025 SkillShare. All rights reserved. </p> </div>
+       
+     
     </footer>
   );
 }

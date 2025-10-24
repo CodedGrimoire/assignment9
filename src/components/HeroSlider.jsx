@@ -1,10 +1,15 @@
 import React from "react";
+
+import "./heroSlider.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/navigation";
+
 import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import "./heroSlider.css";
+
+import "swiper/css/navigation";
+
+
 
 const HeroSlider = () => {
   return (
@@ -16,34 +21,48 @@ const HeroSlider = () => {
         navigation
         pagination={{ clickable: true }}
         loop
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
-        className="hero-swiper"
+        autoplay={{ delay: 1000, 
+          disableOnInteraction: true }}
+        className="swipyy"
       >
+        
         <SwiperSlide className="slide">
-          <img src="/slide1.png" alt="Slide 1" />
+
+          <img src="/slide1.png" 
+          alt="" />
           <div className="caption">
-            <h2>Welcome to SkillShare</h2>
+
+            <h2 className="tt">Welcome to SkillShare
+
+            </h2>
+
             <p>Learn, teach, and grow together.</p>
           </div>
         </SwiperSlide>
 
         <SwiperSlide className="slide">
-          <img src="/slide2.jpeg" alt="Slide 2" />
+          <img src="/slide2.jpeg" alt="" />
           <div className="caption">
+
             <h2>Learn from Top Providers</h2>
             <p>Access the best experts in every skill.</p>
           </div>
+
         </SwiperSlide>
 
         <SwiperSlide className="slide">
-          <img src="/slide3.jpeg" alt="Slide 3" />
+          <img src="/slide3.jpeg" alt="" />
           <div className="caption">
+
+
             <h2>Join Our Workshops</h2>
-            <p>Hands-on learning experiences for everyone.</p>
-          </div>
+            <p>Hands-on learning experiences for everyone.
+
+            </p>  </div>
+        
         </SwiperSlide>
-      </Swiper>
-    </section>
+      </Swiper> </section>
+   
   );
 };
 

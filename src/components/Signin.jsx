@@ -1,114 +1,212 @@
-// Signin.jsx
+
 import { useState } from "react";
+
+import { toast } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
+
+
 import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
-import { auth, googleProvider } from "../firebase";
+
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { toast } from "react-hot-toast"; // Import react-hot-toast for error toast
+import { auth, googleProvider } from "../firebase";
+
+
+
+
 
 export default function Signin() {
   const [email, setEmail] = useState("");
+
+
+  const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
-  const [err, setErr] = useState("");
-  const [busy, setBusy] = useState(false);
-  const [showPassword, setShowPassword] = useState(false); // For password visibility toggle
+ 
+
   const navigate = useNavigate();
 
-  // Handle email sign-in
+
+  const [err, setErr] = useState("");
+  const [busy, setBusy] = useState(false);
+
   async function handleEmailSignin(e) {
     e.preventDefault();
-    setErr(""); setBusy(true);
+    setErr("");
+    setBusy(true);
+
+
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/home", { replace: true }); // Redirect after login success
+      navigate("/", { replace: true });
     } catch (e) {
-      console.error("Login Error:", e); // Log the full error
-      setErr(e.message); // Display the error message
-      toast.error("Login failed. Please try again!"); // Show error toast
+      setErr(e.message);
+      toast.error("Login failed. Please try again!");
     } finally {
       setBusy(false);
     }
   }
 
-  // Handle Google login
   async function handleGoogle() {
-    setErr(""); setBusy(true);
+    setErr("");
+    setBusy(true);
     try {
       await signInWithPopup(auth, googleProvider);
-      navigate("/home", { replace: true }); // Redirect after Google login success
+      navigate("/", { replace: true });
     } catch (e) {
-      console.error("Google Login Error:", e); // Log the full error
-      setErr(e.message); // Display the error message
-      toast.error("Google login failed. Please try again!"); // Show error toast
+      setErr(e.message);
+      toast.error("Google login failed. Please try again!");
     } finally {
       setBusy(false);
     }
   }
 
   return (
-    <div style={{ maxWidth: 360, margin: "4rem auto", fontFamily: "sans-serif" }}>
-      <h2>Login</h2>
-      <form onSubmit={handleEmailSignin}>
+    <div
+      style={{
+        maxWidth: 390,
+        margin: "4rem auto",
+
+       
+        background: "white",
+       
+        borderRadius: 12,
+        padding: 24,
+       
+      }}
+    >
+      <h2 style={{ marginBottom: 16, 
+        textAlign: "center" }}>Login</h2>
+
+      <form onSubmit={handleEmailSignin} style={{ display: "grid", gap: 12 }}>
         <input
           type="email"
-          placeholder="Email"
-          value={email}
+          placeholder="Email"   value={email}
+
+        
           onChange={(e) => setEmail(e.target.value)}
           required
-          style={{ display: "block", width: "100%", margin: "8px 0" }}
+          style={{ border:"solid #cdc7c7ff 2px",
+            width: "100%",
+            padding: "12px 15px",
+
+           
+            borderRadius: 8,
+
+
+            
+            outline: "none",
+          }}
+          onFocus={(e) => (e.target.style.borderColor = "#4676dcff")}
+          onBlur={(e) => (e.target.style.borderColor = "#c6c2c2ff")}
         />
+
         <div style={{ position: "relative" }}>
           <input
             type={showPassword ? "text" : "password"}
-            placeholder="Password"
-            value={password}
+            placeholder="Password"  value={password}
+           
             onChange={(e) => setPassword(e.target.value)}
             required
-            style={{ display: "block", width: "100%", margin: "8px 0" }}
+            style={{
+              width: "100%",
+
+               borderRadius: 9,
+              padding: "10px 42px 10px 12px",
+             
+              border: "1px solid #bdb7b7ff",
+              outline: "none",
+            }}
+            onFocus={(e) => (e.target.style.borderColor = "#5371b1ff")}
+            onBlur={(e) => (e.target.style.borderColor = "#ddd")}
           />
           <span
             onClick={() => setShowPassword(!showPassword)}
             style={{
               position: "absolute",
-              right: 10,
-              top: 10,
+              right: 12,
+              top: "50%",
+               color: "#0f0a0aff",
+              transform: "translateY(-50%)",
+
+               alignItems: "center",
               cursor: "pointer",
+              fontSize: 18,
+             
+              display: "flex",
+             
             }}
+           
           >
             {showPassword ? <FaEyeSlash /> : <FaEye />}
           </span>
         </div>
 
-        <button disabled={busy} type="submit" style={{ width: "100%", padding: 8 }}>
+        <button
+          disabled={busy}
+          type="submit"
+          style={{   borderRadius: 10,
+            width: "100%",
+
+             color: "white",
+            padding: 10,
+         
+            background: busy ? "#9ca3af" : "#2563eb",
+           
+            border: "none",
+           
+            fontWeight: 600,
+          }}
+        >
           {busy ? "Signing in..." : "Login"}
         </button>
       </form>
 
-      {err && <p style={{ color: "crimson" }}>{err}</p>}
+      {err && (
+        <p style={{ color: "crimson", marginTop: 10,
+           fontSize: 14 }}>{err}</p>
+      )}
 
-      <div style={{ marginTop: 12 }}>
-        <Link to="/forgot-password">Forgot Password?</Link> {/* Link to ForgotPassword page */}
-      </div>
+      <div style={{ marginTop: 12,
+         textAlign: "right" }}> <Link to="/forgot-password" style={{ color: "#2563eb" }}>
+       
+          Forgot Password?
+        </Link>  </div>
+    
 
       <div style={{ marginTop: 12 }}>
         <button
           onClick={handleGoogle}
           style={{
             width: "100%",
-            padding: 8,
-            backgroundColor: "#4285F4",
+            padding: 10,
+
+              borderRadius: 9,
+
+            backgroundColor: "#2563eb",
             color: "white",
             border: "none",
-            borderRadius: 6,
+          
+            fontWeight: 600,
+           
           }}
         >
           Continue with Google
-        </button>
-      </div>
+        </button> </div>
+     
 
-      <p style={{ marginTop: 12 }}>
-        Don't have an account? <Link to="/signup">Sign up</Link>
-      </p>
-    </div>
+      <p style={{ 
+
+        marginTop: 14,
+         textAlign: "center" }}>
+        Don&apos;t have an account?{" "}
+
+
+        <Link to="/signup" style={{ 
+          color: "#2563eb" }}>
+          Sign up </Link>
+
+
+       
+      </p> </div>
+   
   );
 }
