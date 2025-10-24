@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Home from "./components/home";
+import Home from "./components/Home";
 import Signin from "./components/Signin";
 import Signup from "./components/Signup";
 import { Toaster } from "react-hot-toast";
