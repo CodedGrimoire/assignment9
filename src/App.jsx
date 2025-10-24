@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Home from "./components/Home";
+import Home from "./components/home";
 import Signin from "./components/Signin";
 import Signup from "./components/Signup";
 import { Toaster } from "react-hot-toast";
@@ -9,6 +9,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import SkillDetails from "./components/SkillDetails";
 import ForgotPassword from "./components/ForgotPassword";
 import UpcomingWorkshops from "./components/UpcomingWorkshops";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
@@ -33,6 +34,7 @@ export default function App() {
           <Route path="/workshops" element={<UpcomingWorkshops />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
+        <Footer/>
       </div>
     </BrowserRouter>
   );

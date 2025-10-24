@@ -5,7 +5,7 @@ import SkillsCards from "./SkillsCards";
 import { auth } from "../firebase";
 import "./home.css";
 
-import Footer from "./Footer";
+
 import Hero from "./HeroSlider";
 
 import Top from "./TopRatedProviders";
@@ -50,11 +50,9 @@ export default function Home() {
           <Top />
         </section>
         <HowWorks/>
-
-        <section>
-          <Footer/>
-        </section>
-      </main>
+  </main>
+     
+    
     </div>
   );
 }
