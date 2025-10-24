@@ -120,11 +120,14 @@ export default function Signup() {
          
           onChange={(e) => setDisplayName(e.target.value)}
           style={{
+             padding: "13px 15px",
             width: "100%",
-            padding: "10px 12px",
-            borderRadius: 8,
-            border: "1px solid #ddd",
+           
+           
+            border: "1px solid #ccc6c6ff",
             outline: "none",
+
+             borderRadius: 9,
           }}
           onFocus={(e) => (e.target.style.borderColor = "#2563eb")}
 
@@ -133,10 +136,12 @@ export default function Signup() {
 
         <input
           type="email"
-          placeholder="Email"
-          value={email}
+          placeholder="Email"  value={email}
+         
           required
           onChange={(e) => setEmail(e.target.value)}
+
+
           style={{   border: "1px solid #cac7c7ff",
             width: "100%",
 
@@ -152,9 +157,9 @@ export default function Signup() {
         />
 
         <input
-          type="text"
-          placeholder="Photo URL (optional)"
-          value={photoURL}
+          type="text"  placeholder="Photo URL (optional)"  value={photoURL}
+         
+         
           onChange={(e) => setPhotoURL(e.target.value)}
           style={{
             width: "100%", padding: "10px 12px",
@@ -163,6 +168,8 @@ export default function Signup() {
            
             outline: "none",
           }}
+
+
           onFocus={(e) => (e.target.style.borderColor = "#2563eb")}
           onBlur={(e) => (e.target.style.borderColor = "#ddd")}
         />
@@ -170,11 +177,16 @@ export default function Signup() {
         <div style={{ position: "relative" }}>
           <input
             type={showPassword ? "text" : "password"}
-            placeholder="Password"
-            value={password}
+
+
+            placeholder="Password"   value={password}
+          
             required
             onChange={(e) => setPassword(e.target.value)}
-            style={{ border: "1px solid #c9c6c6ff",padding: "10px 42px 10px 12px",
+
+
+            style={{ 
+              border: "1px solid #c9c6c6ff",padding: "10px 42px 10px 12px",
               width: "100%",
               
               borderRadius: 9,
@@ -182,8 +194,11 @@ export default function Signup() {
               outline: "none",
             }}
             onFocus={(e) => (e.target.style.borderColor = "#2563eb")}
-            onBlur={(e) => (e.target.style.borderColor = "#ddd")}
+
+            onBlur={(e) => (e.target.style.borderColor = "#d7d0d0ff")}
           />
+
+
           <span
             onClick={() => setShowPassword(!showPassword)}
             style={{
@@ -217,8 +232,8 @@ export default function Signup() {
         )}
 
         <button
-          disabled={busy}
-          type="submit"
+          disabled={busy}   type="submit"
+        
           style={{
             width: "100%",  border: "none",
             padding: 10,
