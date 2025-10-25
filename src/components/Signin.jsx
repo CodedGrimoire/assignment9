@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 import { toast } from "react-hot-toast";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate,useLocation } from "react-router-dom";
 
 
 import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
@@ -23,7 +23,8 @@ export default function Signin() {
  
 
   const navigate = useNavigate();
-
+ const location = useLocation();
+const from = location.state?.from || "/";
 
   const [err, setErr] = useState("");
   const [busy, setBusy] = useState(false);
@@ -36,7 +37,7 @@ export default function Signin() {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/", { replace: true });
+       navigate(from, { replace: true });
     } catch (e) {
       setErr(e.message);
       toast.error("Login failed. Please try again!");
@@ -50,7 +51,7 @@ export default function Signin() {
     setBusy(true);
     try {
       await signInWithPopup(auth, googleProvider);
-      navigate("/", { replace: true });
+      navigate(from, { replace: true });
     } 
     
     catch (e) {
@@ -93,7 +94,7 @@ export default function Signin() {
             padding: "12px 15px",
 
            
-            borderRadius: 8,
+            borderRadius: 9,
 
 
             
@@ -204,7 +205,8 @@ export default function Signin() {
         Don&apos;t have an account?{" "}
 
 
-        <Link to="/signup" style={{ 
+        <Link to="/signup" state={{ from: location.state?.from || "/" }}
+        style={{ 
           color: "#2563eb" }}>
           Sign up </Link>
 

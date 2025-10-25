@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+
+import "./navbar.css";
+
 import { onAuthStateChanged, signOut } from "firebase/auth";
 
 import { auth } from "../firebase";
-import "./navbar.css";
+
 
 export default function Navbar() {
   const [user, setUser] = useState(null);
@@ -26,15 +29,22 @@ export default function Navbar() {
             title={displayNameOrEmail}
             className="avatar"
           />
-          <span className="profile-tooltip">{displayNameOrEmail}</span>
+
+
+          <span className="profile-tooltip">{displayNameOrEmail}
+
+          </span>
         </div>
       ) : (
         <div className="profile-wrapper">
           <div title={displayNameOrEmail} className="avatar initials">
-            {displayNameOrEmail.slice(0, 2).toUpperCase()}
-          </div>
-          <span className="profile-tooltip">{displayNameOrEmail}</span>
-        </div>
+            {displayNameOrEmail.slice(0, 2).toUpperCase()} </div>
+         
+          <span className="profile-tooltip">
+            {displayNameOrEmail}</span> </div>
+       
+
+
       )}
       <button onClick={() => signOut(auth)} className="logout-btn">
         Logout
@@ -42,6 +52,8 @@ export default function Navbar() {
     </div>
   ) : (
     <div className="auth-buttons">
+
+
       <button onClick={() => navigate("/signin")} className="login-btn">
         Login
       </button>
@@ -76,14 +88,7 @@ export default function Navbar() {
         >
           My Profile
         </NavLink>
-        <NavLink
-          to="/workshops"
-          className={({ isActive }) =>
-            isActive ? "nav-link active" : "nav-link"
-          }
-        >
-          Workshops
-        </NavLink>
+       
       </nav>
 
       <div className="navbar-right">{leftControl}</div>

@@ -8,6 +8,9 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 import { signInWithPopup } from "firebase/auth";
+
+
+import {useLocation } from "react-router-dom";
 import { toast } from "react-hot-toast";
 
 import { auth, googleProvider } from "../firebase";
@@ -19,6 +22,13 @@ export default function Signup() {
 
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
+const req1="Password must contain at least one uppercase letter."
+const req2="Password must contain at least one lowercase letter."
+const req3="Password must be at least 6 characters long."
+
+
+   const location = useLocation();
+const from = location.state?.from || "/";
   const [err, setErr] = useState("");
 
 
@@ -34,17 +44,17 @@ export default function Signup() {
     const minLength = 6;
     if (!uppercase.test(pwd)) {
 
-      setPasswordError("Password must contain at least one uppercase letter.");
+      setPasswordError(req1);
       return false;
     }
     if (!lowercase.test(pwd)) {
 
-      setPasswordError("Password must contain at least one lowercase letter.");
+      setPasswordError(req2);
       return false;
     }
     if (pwd.length < minLength) {
 
-      setPasswordError(`Password must be at least ${minLength} characters long.`);
+      setPasswordError(req3);
       return false;
     }
     setPasswordError("");
@@ -57,7 +67,7 @@ export default function Signup() {
     setBusy(true);
     try {
       await signInWithPopup(auth, googleProvider);
-      navigate("/", { replace: true });
+       navigate(from, { replace: true });
     } 
     
     catch (e) {
@@ -81,7 +91,11 @@ export default function Signup() {
     setErr("");
     setBusy(true);
 
-
+ if (!displayName.trim()) {
+    toast.error("Please enter your display name before signing up.");
+    setBusy(false);
+    return;
+  }
     if (!validatePassword(password)) {
       toast.error("Password is invalid. Please follow the password guidelines.");
 
@@ -97,7 +111,7 @@ export default function Signup() {
 
 
       toast.success("Signup successful!");
-      navigate("/", { replace: true });
+      navigate(from, { replace: true });
     } 
     
     catch (e) 
@@ -252,6 +266,13 @@ export default function Signup() {
 
           </p>
         )}
+        <p>
+          <ul style={{color:"grey",fontSize:12}}>
+             <li>{req1}</li>
+    <li>{req2}</li>
+    <li>{req3}</li>
+          </ul>
+        </p>
 
         <button
           disabled={busy}   type="submit"

@@ -3,6 +3,8 @@ import { useEffect, useMemo, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import SkillsCards from "./SkillsCards";
 import { auth } from "../firebase";
+
+import Wokii from "./UpcomingWorkshops";
 import "./home.css";
 
 
@@ -50,6 +52,7 @@ export default function Home() {
           <Top />
         </section>
         <HowWorks/>
+        <Wokii/>
   </main>
      
     

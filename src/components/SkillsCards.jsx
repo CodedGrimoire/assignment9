@@ -40,7 +40,7 @@ const SkillsCards = () => {
     } 
     
     else {
-      navigate("/signin");
+      navigate("/signin", { state: { from: `/details/${skillId}` } });
     }
   };
 
