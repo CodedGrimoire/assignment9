@@ -2,6 +2,9 @@
 import React, { useState, useEffect } from "react";
 
 import { toast } from "react-hot-toast";
+
+import "animate.css";
+
 import { useParams, useNavigate } from "react-router-dom";
 
 
@@ -53,7 +56,10 @@ const SkillDetails = () => {
   }
 
   return (
-    <div className="skill-details-container">
+    <div className="skill-details-container animate__animated animate__fadeInUp"
+    style={{
+      animationDuration: "1s"
+    }}>
      
       <div className="skill-details-grid">
       
@@ -65,7 +71,11 @@ const SkillDetails = () => {
         {/* hfchg*/}
         <div className="right-col">
 
-          <h2 className="skill-title">{skilldeet.skillName}
+          <h2 className="skill-title" style={{
+            marginBottom:"45px",
+            justifyItem:"left",
+            
+          }}>{skilldeet.skillName}
 
           </h2>
 
@@ -76,17 +86,44 @@ const SkillDetails = () => {
 
 
             <p>
-              <strong>Description:</strong> {skilldeet.description}</p>
+              {skilldeet.description}</p>
 
-            <p><strong>Category:</strong> {skilldeet.category}</p>
+            
+<div className="three" style={{
+  display: "flex",
+  fontSize: "50px",
 
-            <p><strong>Rating:</strong> {skilldeet.rating} ⭐</p>
+  justifyContent: "space-around",
+
+  marginTop: "50px",
+
+  marginBottom:"50px",
+  gap: "20px",
+  alignItems: "flex-start",
+
+
+}}>
+            <div style={{display:"flex",
+
+            flexDirection:"row",}}>
+              
+              <p><strong>Rating:</strong> 
+            {skilldeet.rating} ⭐</p></div>
+
+
             <p><strong>Price:</strong> ${skilldeet.price}</p>
 
 
           
               <p><strong>Slots Available:</strong> {skilldeet.slotsAvailable}</p>
+              </div>
             
+
+          <p><strong>
+            
+            Category:</strong> {skilldeet.category}</p>
+
+
             {skilldeet.providerEmail && (
               <p><strong>Contact:</strong> {skilldeet.providerEmail}</p> )}
            

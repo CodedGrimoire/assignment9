@@ -17,13 +17,13 @@ const HowItWorks = () => {
           <div className="guide-icon">
             🖥️
             </div>
-          <h3 className="guide-head">Learn The Essential Skills
+          <h3 className="guide-head">Sign Up!
 
           </h3>
 
 
           <p className="guide-text">
-            Explore curated topics and pick the path that fits your goals.
+            Sign up and Explore curated topics and pick the path that fits your goals.
           </p>
         </div>
 
@@ -32,22 +32,26 @@ const HowItWorks = () => {
 
 
           <h3 className="guide-head">
-            Earn Certificates & Badges
+            Choose a Skill
 
           </h3>
           <p className="guide-text">
-            Complete sessions and add verified achievements to your profile. </p>
+            Browse and choose specific skill you want to learn </p>
 
          
         </div>
 
         <div className="guide-card animate__animated animate__fadeInUp animate__delay-2s">
-          <div className="guide-icon">🎯</div>
+          <div 
+          className="guide-icon">🎯</div>
+
+
           <h3 className="guide-head">
-            Get Ready For Your Next Step
+            Book Session
             </h3>
+
           <p className="guide-text">
-            Build portfolio-ready work and level up your opportunities. </p>
+            Book session to learn that skill! </p>
          
         </div>
 
@@ -58,10 +62,10 @@ const HowItWorks = () => {
             ▶️
             </div>
           <h3 className="guide-head">
-            Master Different Areas
+           Join Workshops!
             </h3>
           <p className="guide-text">
-            Mix live workshops, practice, and feedback to master new skills.
+            Join workshops and live lessons!
 
             
           </p> </div>

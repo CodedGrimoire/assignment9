@@ -125,7 +125,12 @@ p {
 
 
 
-.right-col { width: 100%; }
+.right-col { width: 100%;
+
+  gap:10px;
+ 
+
+}
 
 
 .skill-title {
@@ -151,7 +156,8 @@ p {
 
 .infoz p {
   margin: 8px 0;
-  font-size: 15px;
+  gap : 50px;
+  font-size: 20px;
 
   color: #2a2828;
 }

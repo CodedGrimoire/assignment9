@@ -69,7 +69,7 @@
 .fgss label {
   display: block;
 
-  color: #444;
+  color: #151414;
 font-weight: 600;
   margin-bottom: 6px;
   
@@ -171,6 +171,7 @@ margin: 2rem auto;
   display: flex;
 
    gap: 20px;
+   color: black;
   align-items: center;
  
 }
@@ -180,6 +181,7 @@ margin: 2rem auto;
   height: 90px;
 
    background: #f4f0f0;
+   color: black;;
   border-radius: 50%;
  
   place-items: center;

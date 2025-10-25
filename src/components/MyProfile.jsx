@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 
 import "./myProfile.css";
+
+import "animate.css";
+
 import { auth } from "../firebase";
 
 import { updateProfile, onAuthStateChanged } from "firebase/auth";
@@ -60,7 +63,10 @@ const MyProfile = () => {
   if (!user) return <p className="center-text">Please log in to view profile.</p>;
 
   return (
-    <div className="userinfo">
+   <div
+ className="userinfo animate__animated animate__fadeInUp"
+  style={{ animationDuration: "1s" }}
+>
       <h2>My Profile
         
       </h2>
@@ -80,7 +86,9 @@ const MyProfile = () => {
             </div>
           )}
           <div>
-            <p><b>Name:</b> 
+            <p><b>Name:
+              
+              </b> 
             {user.displayName}
             </p>
 

@@ -3,6 +3,7 @@ import "animate.css";
 
 
 import prooovidersData from "../assets/topProviders.json";
+import radius from "daisyui/utilities/radius";
 
 const TopRatedProviders = () => {
 
@@ -68,7 +69,7 @@ const TopRatedProviders = () => {
             
              
 
-              borderRadius: "10px",   overflow: "hidden",
+              borderRadius: radius.md,   overflow: "hidden",
              
             }}
           >
@@ -79,10 +80,17 @@ const TopRatedProviders = () => {
 
 
               style={{
-                width: "100%",
+
+                borderRadius:"50%",
+                width: "180px",
+               
+               
                  objectFit: "cover",
 
-                height: "180px",
+                  height: "180px",
+              
+
+                
                
               }}
 
