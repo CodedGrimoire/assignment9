@@ -22,7 +22,7 @@ export default function Home() {
     return unsub;
   }, []);
 
-  const displayNameOrEmail = useMemo(
+  const dorE = useMemo(
     () => user?.displayName || user?.email || "",
     [user]
   );
@@ -34,7 +34,7 @@ export default function Home() {
 
         {user ? (
           <p>
-            Welcome back, <b>{displayNameOrEmail}</b>!
+            Welcome back, <b>{dorE}</b>!
           </p>
         ) : (
           <p>You’re browsing as a guest.</p>

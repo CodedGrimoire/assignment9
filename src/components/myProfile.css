@@ -1,117 +1,139 @@
-.profile-container {
+.userinfo {
   max-width: 720px;
-  margin: 2rem auto;
-  padding: 24px;
-  background: #ffffff;
+  
   border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  font-family: "Inter", sans-serif;
-  color: #333;
+ 
+ 
+  color: black;
 }
 
-.profile-container h2 {
+
+
+.userinfo h2 {font-weight: 700;
   text-align: center;
+
+   margin-bottom: 1.5rem;
   font-size: 1.8rem;
-  font-weight: 600;
+  
+ 
+}
+
+.persoonal {
   margin-bottom: 1.5rem;
 }
 
-.profile-info {
-  margin-bottom: 1.5rem;
-}
 
-.profile-header {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
 
-.profile-pic {
+.dp {
   width: 90px;
-  height: 90px;
-  border-radius: 50%;
+
   object-fit: cover;
-  border: 2px solid #ddd;
+  height: 90px;
+
+   border: 2px white solid;
+  border-radius: 50%;
+  
+ 
 }
+
 
 .profile-placeholder {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: #ececec;
-  color: #555;
-  font-weight: 700;
+
   font-size: 1.2rem;
+  width: 90px;
+  
+  color: rgb(46, 44, 44);
+  font-weight: 700;
+  
 }
 
 .edit-btn {
   display: block;
-  margin: 0 auto;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 6px;
-  background-color: #2563eb;
+
+   font-weight: 500;
+ 
   color: white;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.2s;
+ 
+ 
 }
 
-.edit-btn:hover {
-  background-color: #1d4ed8;
-}
-
-/* Form styling */
-.profile-form {
+.updates {
   margin-top: 1rem;
 }
 
-.form-group {
+
+.fgss {
   margin-bottom: 16px;
 }
 
-.form-group label {
+.fgss label {
   display: block;
-  font-weight: 500;
-  margin-bottom: 6px;
+
   color: #444;
+font-weight: 600;
+  margin-bottom: 6px;
+  
 }
 
-.form-group input {
+.fgss input {
   width: 100%;
   padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+
+  border: 1px  #ccc solid;
+  border-radius: 7px;
+  
   font-size: 1rem;
 }
 
-.form-group input:focus {
-  outline: none;
-  border-color: #2563eb;
+
+
+
+.edit-btn {
+
+  border: none;
+ margin: 0 auto;
+
+   border-radius: 6px;
+  padding: 10px 20px;
+  
+
+  background-color: #2563eb;
 }
+
+
 
 .error-text {
-  color: crimson;
+
   margin-bottom: 12px;
-  font-size: 0.95rem;
+
+
+   font-size: 0.95rem;
+  color: crimson;
+  
+ 
 }
 
+
 .form-actions {
+
+   gap: 12px;
   display: flex;
   justify-content: flex-end;
-  gap: 12px;
+ 
 }
+
+
 
 .cancel-btn,
 .save-btn {
   padding: 8px 14px;
+
+   border-radius: 6px;
   border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: background 0.2s;
+ 
+ 
+  font-weight: 600;
+  
 }
 
 .cancel-btn {
@@ -119,21 +141,48 @@
   color: #111;
 }
 
-.cancel-btn:hover {
-  background-color: #d1d5db;
-}
 
 .save-btn {
   background-color: #16a34a;
   color: white;
 }
 
-.save-btn:hover {
-  background-color: #15803d;
-}
 
 .center-text {
   text-align: center;
+
+   color: black;
   margin-top: 2rem;
-  color: #555;
+ 
+}
+
+.userinfo {
+margin: 2rem auto;
+
+ background: white;
+  padding: 24px;
+ 
+}
+
+
+
+
+.profile-header {
+  display: flex;
+
+   gap: 20px;
+  align-items: center;
+ 
+}
+
+.profile-placeholder {
+ display: grid;
+  height: 90px;
+
+   background: #f4f0f0;
+  border-radius: 50%;
+ 
+  place-items: center;
+ 
+
 }

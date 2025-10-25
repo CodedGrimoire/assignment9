@@ -1,11 +1,13 @@
 import { useEffect, useMemo, useState } from "react";
 import {
   createUserWithEmailAndPassword,
+   updateProfile,
   signInWithEmailAndPassword,
+  onAuthStateChanged,
   signInWithPopup,
   signOut as fbSignOut,
-  onAuthStateChanged,
-  updateProfile,
+  
+ 
   sendPasswordResetEmail,
 } from "firebase/auth";
 
@@ -30,12 +32,17 @@ function AuthProvider({ children }) {
     });
 
     
+
   const signin = (email, password) =>
     signInWithEmailAndPassword(auth, email, password);
 
   const signInWithGoogle = () => signInWithPopup(auth, googleProvider);
+
+   const resetPassword = (email) => sendPasswordResetEmail(auth, email);
   const signOut = () => fbSignOut(auth);
-  const resetPassword = (email) => sendPasswordResetEmail(auth, email);
+
+
+ 
 
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (user) => {
@@ -49,6 +56,7 @@ function AuthProvider({ children }) {
     () => ({ currentUser, signup, signin, signInWithGoogle, signOut, resetPassword }),
     [currentUser]
   );
+
 
   if (loading) return null;
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

@@ -1,6 +1,3 @@
-
-
-
 import { toast } from "react-hot-toast";
 
 import { useNavigate } from "react-router-dom";
@@ -41,7 +38,7 @@ export default function ForgotPassword() {
   };
 
   return (
-    <div style={{ maxWidth: 360, margin: "4rem auto",
+    <div style={{ maxWidth: 370, margin: "4rem auto",
       
      }}>
       <h2>Forgot Password</h2>
@@ -52,11 +49,13 @@ export default function ForgotPassword() {
          
           onChange={(e) => setEmail(e.target.value)}
           required
-          style={{ display: "block", width: "100%", margin: "8px 0"  ,height: "35px", padding: "0 10px", borderRadius: "5px", border: "1px solid #c1bdbdff" 
+          style={{ display: "block", width: "100%", margin: "8px 0"  ,height: "35px", padding: "0 10px",
+             borderRadius: "5px", border: "1px solid #c1bdbdff" 
            
           }}
         />
-        <button type="submit" style={{ width: "100%", color: "white", backgroundColor: "#2563eb", borderRadius: 6, border: "none",
+        <button type="submit" style={{ width: "100%", color: "white", backgroundColor: "#2563eb", borderRadius: 6,
+         border: "none",
           
           padding: 8 }}>
           Reset Password</button>

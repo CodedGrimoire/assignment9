@@ -1,80 +1,116 @@
-/* General container */
+
 .home-container {
   max-width: 100%;
+
+   padding: 0 16px;
   margin: 0 auto;
-  font-family: sans-serif;
-  padding: 0 16px;
+ 
+ 
 }
 
-/* Navbar */
+
 .navbar {
   display: flex;
+
   justify-content: space-between;
-  align-items: center;
+   background-color: white;
+
+ 
   padding: 16px 0;
-  background-color: #f8f8f8;
-  border-bottom: 1px solid #ddd;
-  width: 100%;
+ 
 }
+
 
 .navbar-left {
   display: flex;
-  align-items: center;
+
   gap: 12px;
+  align-items: center;
+  
 }
 
-/* Avatar styling */
+
 .avatar {
   width: 36px;
+
+
+   border-radius: 50%;
+
+    border: 1px white solid;
   height: 36px;
-  border-radius: 50%;
+ 
   object-fit: cover;
-  border: 1px solid #ddd;
+ 
 }
+
+
+.navbar{
+ align-items: center;
+border-bottom:  white 1px solid;
+  width: 100%;
+}
+
 
 .avatar.initials {
   background: #ececec;
-  color: #333;
-  font-weight: 600;
-  display: grid;
-  place-items: center;
-  border: 1px solid #ddd;
+  color: #313030;
+ 
 }
 
-/* Button styling */
+
 .signin-btn,
 .logout-btn,
 .details-btn {
   padding: 8px 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 14px;
+
+   font-size: 15px;
+  border-radius: 7px;
+ 
+ 
+}
+
+
+.logout-btn {
+  background-color: #f44336;
+
+   border: none;
+  color: white;
+ 
+}
+
+
+
+.heading {
+  margin-bottom: 9px;
+  font-size: 25px;
+}
+
+
+.details-btn-container {
+  margin-top: 17px;
+}
+
+
+.avatar.initials{
+   font-weight: 700;
+
+    border: white 1px solid;
+  display: grid;
+  place-items: center;
+ 
+}
+
+
+.details-btn {
+  background-color: #3f51b5;
+
+   border: none;
+  color: white;
+ 
 }
 
 .signin-btn {
   background-color: #4caf50;
   color: white;
   border: none;
-}
-
-.logout-btn {
-  background-color: #f44336;
-  color: white;
-  border: none;
-}
-
-.details-btn {
-  background-color: #3f51b5;
-  color: white;
-  border: none;
-}
-
-/* Main content */
-.heading {
-  margin-bottom: 8px;
-  font-size: 24px;
-}
-
-.details-btn-container {
-  margin-top: 16px;
 }

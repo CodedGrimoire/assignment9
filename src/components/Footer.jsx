@@ -8,11 +8,13 @@ export default function Footer() {
 
          flexWrap: "wrap",
         justifyContent: "space-between",
+
+         borderTop: "1px solid #cac8c8ff",
         alignItems: "flex-start",
        
         gap: 25,
         padding: "24px 40px",
-        borderTop: "1px solid #cac8c8ff",
+       
        
         backgroundColor: "white",
       }}
@@ -25,21 +27,23 @@ export default function Footer() {
         <p>
           Email:{" "}
           <a href="mailto:contact@skillshare123.com" style={{ color: "#5583e6ff", textDecoration: "none" }}>
+
             contact@skillshare123.com
-          </a>
-        </p>
+          </a></p>
+        
 
         <p>
           Phone:{" "}
           <a href="tel:+123456789" style={{ color: "#5583e6ff", textDecoration: "none" }}>
-           018123456789
-          </a>
-        </p>
+           018123456789 </a></p>
+         
+        
 
       </div>
 
       <div style={{ textAlign: "right", flex: 1, minWidth: "250px" }}>
         <div style={{ display: "flex", justifyContent: "flex-end", gap: 16, marginBottom: 12 }}>
+          
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
 
 

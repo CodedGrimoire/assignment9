@@ -16,7 +16,7 @@ import Home from "./components/Home";
 import Signin from "./components/Signin";
 import Signup from "./components/Signup";
 
-import ForgotPassword from "./components/ForgotPassword";
+import ForgotPass from "./components/ForgotPassword";
 import Footer from "./components/Footer";
 
 export default function App() {
@@ -46,10 +46,12 @@ export default function App() {
     </PrivateRoute>
   }
 />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/forgot-password" element={<ForgotPass />} />
 
 
           <Route path="/workshops" element={<UpcomingWorkshops />} />
+
+          
           <Route path="*"
            element={<Navigate to="/" replace />} />
         </Routes>
