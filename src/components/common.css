@@ -263,3 +263,77 @@ h3 {
   color: #444;
   margin-top: 15px;
 }
+.how-guides {
+  width: 100%;
+  background: #f6f8ff;
+  padding: 56px 0;
+}
+
+.how-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 28px 0;
+}
+
+.guides-grid {
+  width: 88%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.guide-card {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 6px 24px rgba(15, 23, 42, 0.06);
+  padding: 28px 22px;
+  text-align: center;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.guide-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.12);
+}
+
+.guide-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 14px auto;
+  font-size: 36px;
+  display: grid;
+  place-items: center;
+  background: #eef2ff;
+  color: #3b82f6;
+  border-radius: 50%;
+}
+
+.guide-head {
+  font-size: 18px;
+  color: #0f172a;
+  margin: 6px 0 8px 0;
+  font-weight: 700;
+}
+
+.guide-text {
+  font-size: 14.5px;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .guides-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 576px) {
+  .how-guides { padding: 40px 0; }
+  .how-title { font-size: 26px; }
+  .guides-grid { width: 92%; grid-template-columns: 1fr; gap: 14px; }
+  .guide-card { padding: 22px 18px; }
+}

@@ -1,44 +1,47 @@
 import React from "react";
-import "animate.css"; 
-
-
+import "animate.css";
 import "./common.css";
-//hfchgjhfgg
+
 const HowItWorks = () => {
   return (
-    <section className="how-it-works animate__animated animate__fadeIn">
+    <section className="how-guides animate__animated animate__fadeIn">
+      <h2 className="how-title">How It Works</h2>
 
-      <h2 className="tile">How It Works</h2>
-      <div className="steps">
-
-
-
-        <div className="step animate__animated animate__fadeInLeft">
-          <h3>Step 1: Choose a Skill</h3>
-
-
-          <p>Browse through a variety of skills offered by top-rated providers.</p>
+      <div className="guides-grid">
+        <div className="guide-card animate__animated animate__fadeInUp">
+          <div className="guide-icon">🖥️</div>
+          <h3 className="guide-head">Learn The Essential Skills</h3>
+          <p className="guide-text">
+            Explore curated topics and pick the path that fits your goals.
+          </p>
         </div>
 
-
-        <div className="step animate__animated animate__fadeInUp">
-          <h3>Step 2: Book a Session</h3>
-
-
-          <p>Select a provider and book a session at your preferred time slot.</p>
+        <div className="guide-card animate__animated animate__fadeInUp animate__delay-1s">
+          <div className="guide-icon">📜</div>
+          <h3 className="guide-head">Earn Certificates & Badges</h3>
+          <p className="guide-text">
+            Complete sessions and add verified achievements to your profile.
+          </p>
         </div>
 
-        <div className="step animate__animated animate__fadeInRight">
-          <h3>Step 3: Learn and Grow</h3>
-
-
-          <p>Attend the session, learn new skills, and enhance your abilities.</p>
+        <div className="guide-card animate__animated animate__fadeInUp animate__delay-2s">
+          <div className="guide-icon">🎯</div>
+          <h3 className="guide-head">Get Ready For Your Next Step</h3>
+          <p className="guide-text">
+            Build portfolio-ready work and level up your opportunities.
+          </p>
         </div>
 
-
+        <div className="guide-card animate__animated animate__fadeInUp animate__delay-3s">
+          <div className="guide-icon">▶️</div>
+          <h3 className="guide-head">Master Different Areas</h3>
+          <p className="guide-text">
+            Mix live workshops, practice, and feedback to master new skills.
+          </p>
+        </div>
       </div>
     </section>
   );
 };
-//gfyjfyigigigi
+
 export default HowItWorks;
