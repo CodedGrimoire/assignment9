@@ -4,7 +4,7 @@
 This project is a web application that allows users to sign up, log in, and explore different features. The app includes functionalities like **authentication** via **Firebase**, a **hero slider** using **Swiper**, and **react-hot-toast** for success/error notifications. The app also features a **profile page**, **forgot password** functionality, and a **social login (Google)** option.
 
 ## Live URL:
-[Your live URL here, e.g., https://your-project-name.com]
+https://assignment9-lovat.vercel.app/
 
 ## Key Features:
 - **User Authentication**: Users can sign up, log in, and manage their profile using Firebase Authentication.
