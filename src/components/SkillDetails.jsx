@@ -44,6 +44,13 @@ const SkillDetails = () => {
 
     setShowForm(false);
   };
+   if (!skilldeet) {
+    return (
+      <div className="skill-details-container">
+        <div style={{ padding: 24 }}>Loading…</div>
+      </div>
+    );
+  }
 
   return (
     <div className="skill-details-container">
