@@ -42,7 +42,7 @@ const MyProfile = () => {
       await updateProfile(user, { displayName: name, photoURL });
 
       setEditMode(false);
-      toast.error("Profile updated successfully!");
+      toast.success("Profile updated successfully!");
 
 
       

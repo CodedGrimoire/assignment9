@@ -1,96 +1,116 @@
 .workshops-section {
-  text-align: center;
-  padding: 3rem 2rem;
-  background: #f8fafc;
+
   margin-top: 3rem;
+  text-align: center;
+ background: #f8fafc;
+  padding: 3rem 2rem;
+ 
+  
 }
+
 
 .workshops-heading {
   font-size: 2rem;
-  font-weight: 600;
+
+  color: black;
+font-weight: 700;
   margin-bottom: 2rem;
-  color: #111;
+  
+
 }
 
-.workshops-grid {
+.griddzz {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  justify-items: center;
+
+  grid-template-columns: repeat(3, 1fr);
+
+ justify-items: center;
+  
+ 
 }
+
 
 .workshop-card {
-  width: 100%;
-  max-width: 320px;
-  background: #fff;
+ 
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+ 
   overflow: hidden;
   transition: transform 0.3s ease;
 }
 
-.workshop-card:hover {
-  transform: translateY(-4px);
-}
 
 .workshop-image {
   width: 100%;
+
+   object-fit: cover;
   height: 200px;
-  object-fit: cover;
+ 
 }
 
 .workshop-info {
   padding: 1rem;
 }
 
-.workshop-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
+
 
 .workshop-details {
   color: #555;
   margin-bottom: 0.5rem;
 }
 
-.workshop-instructor {
-  color: #666;
-  font-style: italic;
-  margin-bottom: 0.8rem;
-}
+
 
 .book-btn {
   padding: 8px 12px;
   border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  background-color: #2563eb;
+  
   color: white;
-  transition: background-color 0.3s ease;
+ 
 }
 
-.book-btn:hover {
-  background-color: #1d4ed8;
+
+
+.teachss {
+  color: #666;
+  
+  margin-bottom: 0.8rem;
 }
+
+.workshop-card{
+   width: 100%;
+  max-width: 320px;
+  background:white;
+}
+
+
+
+@media (max-width: 576px) {
+  .griddzz {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 .cancel-btn {
   background-color: #dc2626;
 }
 
-.cancel-btn:hover {
-  background-color: #b91c1c;
+
+.workshop-card:hover {
+  transform: translateY(-4px);
 }
 
-/* 📱 Mobile responsiveness */
-@media (max-width: 768px) {
-  .workshops-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
 
-@media (max-width: 576px) {
-  .workshops-grid {
-    grid-template-columns: 1fr;
-  }
+.workshop-title {
+  font-size: 1.2rem;
+
+ margin-bottom: 0.5rem;
+  font-weight: 600;
+ 
+}
+.book-btn{
+  border-radius: 7px;
+ 
+  background-color: #2563eb;
 }

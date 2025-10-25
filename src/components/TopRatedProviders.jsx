@@ -88,7 +88,10 @@ const TopRatedProviders = () => {
 
 
             />
-            <h3 style={{ marginTop: "1.5rem", fontSize: "1.3rem" ,color: "#111010ff"}}>
+            <h3 style={{ marginTop: "1.5rem", 
+              
+              
+              fontSize: "1.3rem" ,color: "#111010ff"}}>
               {provider.name}
             </h3>
             <p style={{ color: "#403e3eff", margin: "6px 0" }}>{provider.skill}

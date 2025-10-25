@@ -5,6 +5,8 @@
  
 }
 
+
+
 .skill-card {
   border: 1px solid #d9d2d2;
 
@@ -33,6 +35,7 @@ height: auto;
  
   border-radius: 11px;
 }
+
 
 .skill-name {
   font-size: 18px;
@@ -68,6 +71,8 @@ height: auto;
   color: #3b3939;
  
 }
+
+
 
 .view-details-btn {
   background-color: #4f60c1;

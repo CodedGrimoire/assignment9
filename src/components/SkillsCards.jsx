@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+
+import "./skillsCards.css";
 import { useNavigate } from "react-router-dom";
 
 import skillsData from "../assets/skill.json";
@@ -6,7 +8,7 @@ import skillsData from "../assets/skill.json";
 
 import { onAuthStateChanged } from "firebase/auth";
 
-import "./skillsCards.css";
+
 
 import { auth } from "../firebase";
 
