@@ -51,10 +51,14 @@ export default function Signin() {
     try {
       await signInWithPopup(auth, googleProvider);
       navigate("/", { replace: true });
-    } catch (e) {
+    } 
+    
+    catch (e) {
       setErr(e.message);
       toast.error("Google login failed. Please try again!");
-    } finally {
+    } 
+    
+    finally {
       setBusy(false);
     }
   }
@@ -125,10 +129,10 @@ export default function Signin() {
               right: 12,
               top: "50%",
                color: "#0f0a0aff",
-              transform: "translateY(-50%)",
+            
 
                alignItems: "center",
-              cursor: "pointer",
+             
               fontSize: 18,
              
               display: "flex",

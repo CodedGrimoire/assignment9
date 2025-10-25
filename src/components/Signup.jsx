@@ -2,9 +2,15 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { auth } from "../firebase";
+
+
+
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+
+import { signInWithPopup } from "firebase/auth";
 import { toast } from "react-hot-toast";
+
+import { auth, googleProvider } from "../firebase";
 
 export default function Signup() {
  
@@ -46,6 +52,22 @@ export default function Signup() {
   };
 
 
+  async function handleGoogle() {
+    setErr("");
+    setBusy(true);
+    try {
+      await signInWithPopup(auth, googleProvider);
+      navigate("/", { replace: true });
+    } 
+    
+    catch (e) {
+      setErr(e.message);
+      toast.error("Google login failed. Please try again!");
+    } 
+    finally {
+      setBusy(false);
+    }
+  }
 
   const [email, setEmail] = useState("");
 
@@ -264,6 +286,27 @@ export default function Signup() {
 
         <Link to="/signin" style={{ color: "#2563eb" }}>
           Sign in </Link> </p>
+
+          <div style={{ marginTop: 12 }}>
+        <button
+          onClick={handleGoogle}
+          style={{
+            width: "100%",
+            padding: 10,
+
+              borderRadius: 9,
+
+            backgroundColor: "#2563eb",
+            color: "white",
+            border: "none",
+          
+            fontWeight: 600,
+           
+          }}
+        >
+          Continue with Google
+        </button> </div>
+     
 
 
        
