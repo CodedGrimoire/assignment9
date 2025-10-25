@@ -289,7 +289,7 @@ h3 {
 .guide-card {
   background: #ffffff;
   border-radius: 14px;
-  box-shadow: 0 6px 24px rgba(15, 23, 42, 0.06);
+ 
   padding: 28px 22px;
   text-align: center;
   transition: transform .25s ease, box-shadow .25s ease;
@@ -326,10 +326,7 @@ h3 {
   margin: 0;
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-  .guides-grid { grid-template-columns: repeat(2, 1fr); }
-}
+
 
 @media (max-width: 576px) {
   .how-guides { padding: 40px 0; }

@@ -1,22 +1,38 @@
-import React, { useState } from "react";
+
 
 
 import { toast } from "react-hot-toast";
 
 import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+
+
+import { useAuth } from "../contexts/use-auth";
+
+
 
 export default function ForgotPassword() {
   const [emailss, setEmail] = useState("");
 
+    const { resetPassword } = useAuth();
 
   const navigate = useNavigate();
 
-  const handleResetPassword = (e) => {
+  const handleResetPassword = async (e) => {
     e.preventDefault();
     if (emailss) {
+     try {
+      await resetPassword(emailss); 
       toast.success("Password reset link sent to your email!");
-      navigate("/home");
-    } else {
+      navigate("/signin");
+    } 
+    catch (error) {
+     
+      toast.error(error.message || "Failed to send reset email.");
+    }
+    } 
+
+    else {
       toast.error("Please enter a valid email address!");
     }
   };

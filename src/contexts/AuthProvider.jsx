@@ -8,11 +8,16 @@ import {
   updateProfile,
   sendPasswordResetEmail,
 } from "firebase/auth";
+
+
 import { auth, googleProvider } from "../firebase";
+
+
 import { AuthContext } from "./auth-context";
 
 function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(null);
+
   const [loading, setLoading] = useState(true);
 
   const signup = (email, password, displayName) =>
@@ -24,6 +29,7 @@ function AuthProvider({ children }) {
       return cred;
     });
 
+    
   const signin = (email, password) =>
     signInWithEmailAndPassword(auth, email, password);
 
@@ -48,4 +54,4 @@ function AuthProvider({ children }) {
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 
-export default AuthProvider; // ✅ component-only export
+export default AuthProvider; 
