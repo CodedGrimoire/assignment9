@@ -1,27 +1,38 @@
 .navbar {
   display: flex;
+
+padding: 13px 60px; 
   align-items: center;
- padding: 12px 60px; 
+ 
  
  
 }
+.tootoo{
+  visibility: hidden;
 
-.navbar-left {
-  flex: 1;
-  display: flex;
-  align-items: center;
+ background-color: #333;
+
+ border-radius: 7px;
+  opacity: 0;
+  width: max-content;
+ 
+  color: white;
+  text-align: center;
+  
 }
 
 .logo-text {
   font-weight: 700;
 
   font-size: 1.5rem;
+
+  margin-left: 10px; 
   text-decoration: none;
 
 
   color: black;
   
-  margin-left: 10px; 
+  
 }
 
 .navbar{
@@ -54,11 +65,13 @@
 }
 
 
-.nav-link.active {
+.nav-link.active {text-decoration: underline;
   font-weight: 700;
-  text-decoration: underline;
-  color: #143782;
+  
+  color: #0a2152;
 }
+
+
 
 .navbar-right {
   flex: 1;
@@ -74,22 +87,22 @@
 
 
 
-.user-controls {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
 
 .auth-buttons {
   display: flex;
   gap: 8px;
 }
 
+
 .avatar {
   width: 45px;
-  height: auto;
-  border-radius: 50%;
-  object-fit: cover;
+
+   border-radius: 50%;
+ 
+  height: 45px;
+
+   object-fit: cover;
+ 
 
   
 }
@@ -97,27 +110,23 @@
 
 .avatar.initials {
   display: grid;
-  place-items: center;
+
   background: #e4e4e4;
+  place-items: center;
+  
 
 
   color: #333;
-  font-weight: 600;
+  font-weight: 700;
 }
 
-.profile-wrapper {
+.wrappy {
   position: relative;
   display: inline-block;
 }
 
-.profile-tooltip {
-  visibility: hidden;
-  opacity: 0;
-  width: max-content;
-  background-color: #333;
-  color: white;
-  text-align: center;
-  border-radius: 6px;
+.tootoo {
+  
   padding: 4px 8px;
   position: absolute;
   bottom: -35px;
@@ -155,37 +164,30 @@
 .signup-btn {
   margin-left: 8px;
 }
-/* Profile hover tooltip */
-.profile-wrapper {
+
+.wrappy {
   position: relative;
   display: inline-block;
 }
 
-.profile-tooltip {
+.tootoo {
   visibility: hidden;
   opacity: 0;
   position: absolute;
-  bottom: -28px; /* position below the profile image */
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #333;
-  color: #fff;
-  text-align: center;
+ 
   padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 13px;
-  white-space: nowrap;
+ 
  
   z-index: 100;
 }
 
 
-.profile-wrapper:hover .profile-tooltip {
+.wrappy:hover .tootoo {
   visibility: visible;
   opacity: 1;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 576px) {
   .navbar {
     flex-direction: column;
     align-items: center;
@@ -207,4 +209,38 @@
     margin-top: 10px;
     width: 100%;
   }
+}
+
+
+.navbar-left {
+  flex: 1;
+
+  align-items: center;
+  display: flex;
+  
+}
+
+
+.user-controls {
+  display: flex;
+
+   gap: 10px;
+  align-items: center;
+ 
+}
+
+.tootoo{
+ bottom: -28px; 
+  left: 50%;
+
+
+   color: white;
+  text-align: center;
+  transform: translateX(-50%);
+
+ border-radius: 4px;
+  font-size: 13px;
+  white-space: nowrap;
+  background-color: #333;
+ 
 }

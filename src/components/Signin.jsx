@@ -68,20 +68,30 @@ const from = location.state?.from || "/";
     <div
       style={{
         maxWidth: 390,
+
+        padding: 24,
         margin: "4rem auto",
+
+
 
        
         background: "white",
        
         borderRadius: 12,
-        padding: 24,
+        
        
       }}
     >
+
+
       <h2 style={{ marginBottom: 16, 
         textAlign: "center" }}>Login</h2>
 
-      <form onSubmit={handleEmailSignin} style={{ display: "grid", gap: 12 }}>
+      <form onSubmit={handleEmailSignin} 
+      style={{ display: "grid", 
+      gap: 12 }}>
+
+
         <input
           type="email"
           placeholder="Email"   value={email}
@@ -100,7 +110,9 @@ const from = location.state?.from || "/";
             
             outline: "none",
           }}
+
           onFocus={(e) => (e.target.style.borderColor = "#4676dcff")}
+
           onBlur={(e) => (e.target.style.borderColor = "#c6c2c2ff")}
         />
 
@@ -114,24 +126,30 @@ const from = location.state?.from || "/";
             style={{
               width: "100%",
 
+               outline: "none",
+
                borderRadius: 9,
               padding: "10px 42px 10px 12px",
              
-              border: "1px solid #bdb7b7ff",
-              outline: "none",
+              border: " #bdb7b7ff 1px solid",
+             
             }}
+
+
             onFocus={(e) => (e.target.style.borderColor = "#5371b1ff")}
             onBlur={(e) => (e.target.style.borderColor = "#ddd")}
           />
           <span
             onClick={() => setShowPassword(!showPassword)}
+
+
             style={{
               position: "absolute",
               right: 12,
               top: "50%",
                color: "#0f0a0aff",
             
-
+justifyContent: "center",
                alignItems: "center",
              
               fontSize: 18,
@@ -141,8 +159,8 @@ const from = location.state?.from || "/";
             }}
            
           >
-            {showPassword ? <FaEyeSlash /> : <FaEye />}
-          </span>
+            {showPassword ? <FaEyeSlash /> : <FaEye />}  </span>
+         
         </div>
 
         <button
@@ -180,7 +198,7 @@ const from = location.state?.from || "/";
       <div style={{ marginTop: 12 }}>
         <button
           onClick={handleGoogle}
-          style={{
+          style={{fontWeight: 600,
             width: "100%",
             padding: 10,
 
@@ -190,7 +208,7 @@ const from = location.state?.from || "/";
             color: "white",
             border: "none",
           
-            fontWeight: 600,
+            
            
           }}
         >
@@ -202,7 +220,9 @@ const from = location.state?.from || "/";
 
         marginTop: 14,
          textAlign: "center" }}>
-        Don&apos;t have an account?{" "}
+
+
+        Do not have an account?{" "}
 
 
         <Link to="/signup" state={{ from: location.state?.from || "/" }}
