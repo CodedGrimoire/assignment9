@@ -9,7 +9,7 @@ import "swiper/css/pagination";
 const HeroSlider = () => {
   return (
     <>
-      {/* Slider Section */}
+      
       <section className="hero-section">
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
@@ -18,17 +18,20 @@ const HeroSlider = () => {
           navigation
           pagination={{ clickable: true }}
           loop
-          autoplay={{ delay: 3500, disableOnInteraction: false }}
+          autoplay={{ delay: 2000, 
+            disableOnInteraction: true }}
           className="swipyy"
         >
           <SwiperSlide className="slide">
-            <img src="/1.jpg" alt="slide1" />
+            <img src="/1.jpg" alt="" />
             <div className="caption">
               <h2>Learn Anything, Anytime, Anywhere</h2>
+
+
               <p>
-                Learn, teach, and grow together with SkillShare — your gateway
+                Learn, teach, and grow together with SkillShare — your gateway</p>
                 to expert-led workshops.
-              </p>
+              
               <div className="hero-buttons">
                 <button className="btn-red">Get Enrolled</button>
                 <button className="btn-outline">Watch Preview</button>
@@ -37,7 +40,7 @@ const HeroSlider = () => {
           </SwiperSlide>
 
           <SwiperSlide className="slide">
-            <img src="/1.jpg" alt="slide2" />
+            <img src="/1.jpg" alt="" />
             <div className="caption">
               <h2>Learn from Top Providers</h2>
               <p>Access the best experts in every skill field worldwide.</p>
@@ -45,7 +48,7 @@ const HeroSlider = () => {
           </SwiperSlide>
 
           <SwiperSlide className="slide">
-            <img src="/1.jpg" alt="slide3" />
+            <img src="/1.jpg" alt="" />
             <div className="caption">
               <h2>Join Our Workshops</h2>
               <p>Hands-on learning experiences for everyone.</p>
@@ -54,11 +57,14 @@ const HeroSlider = () => {
         </Swiper>
       </section>
 
-      {/* Feature Section */}
+     
       <section className="features-section">
         <div className="feature-card">
+
+
           <div className="feature-icon">👩‍🏫</div>
           <h3>Expert Teachers</h3>
+
           <p>Learn from verified instructors with proven experience.</p>
         </div>
 

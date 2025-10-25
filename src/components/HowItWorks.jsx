@@ -5,12 +5,16 @@ import "./common.css";
 const HowItWorks = () => {
   return (
     <section className="how-guides animate__animated animate__fadeIn">
+
+
       <h2 className="how-title">How It Works</h2>
 
       <div className="guides-grid">
         <div className="guide-card animate__animated animate__fadeInUp">
           <div className="guide-icon">🖥️</div>
           <h3 className="guide-head">Learn The Essential Skills</h3>
+
+
           <p className="guide-text">
             Explore curated topics and pick the path that fits your goals.
           </p>
@@ -20,8 +24,9 @@ const HowItWorks = () => {
           <div className="guide-icon">📜</div>
           <h3 className="guide-head">Earn Certificates & Badges</h3>
           <p className="guide-text">
-            Complete sessions and add verified achievements to your profile.
-          </p>
+            Complete sessions and add verified achievements to your profile. </p>
+
+         
         </div>
 
         <div className="guide-card animate__animated animate__fadeInUp animate__delay-2s">
@@ -31,6 +36,8 @@ const HowItWorks = () => {
             Build portfolio-ready work and level up your opportunities.
           </p>
         </div>
+
+
 
         <div className="guide-card animate__animated animate__fadeInUp animate__delay-3s">
           <div className="guide-icon">▶️</div>
